@@ -16,7 +16,7 @@ public class Method2 {
 		System.out.println("test1 메소드 호출");
 	}
 	
-	// 반환이 없고 매개변수가 하나인 메소드
+	// 반환이 없고 매개변수가 하나인 메소드(void 입력시 반환이 없는거임)
 	public static void test2(int num) {
 		System.out.println("num: " + num);
 		System.out.println("test2 메소드 호출");
@@ -29,10 +29,36 @@ public class Method2 {
 		System.out.println("test3 메소드 호출");
 	}
 	
-	//반환은 있고 매개변수가 없는 메소드
+	//반환은 있고 매개변수가 없는 메소드(돌려줄 때 int 로 돌려줌)
 	public static int test4() {
 		System.out.println("test 메소드 호출");
 		return 100;
+	}
+	
+	//반환도 있고 매개변수도 있는 메소드
+	public static String test5(String name, int index) {
+		System.out.println("name: " + name);
+		System.out.println("index: " + index);
+		return name + index;
+	}
+	
+	//반환값이 없는 메소드에서 메소드를 강제로 탈출하는 방법
+	public static void test6(String names) {
+		while(true) {
+			int tokenIndex = names.indexOf(", ");
+			String name = tokenIndex != -1 ? names.substring(0, tokenIndex)
+					: names;
+			System.out.println(name);
+			if(name.equals("김준삼")){
+				return; //break는 반복만 멈추고 return은 아예 메소드 자체를 멈춤
+			}
+			if(tokenIndex == -1) {
+				break;
+			}
+			names = names.substring(tokenIndex + 2);
+		}
+		System.out.println("메소드가 정상적으로 종료되었음.");
+		
 	}
 	
 	public static void main(String[] args) {
@@ -43,7 +69,15 @@ public class Method2 {
 		test3(1111, 2222);
 		int a = test4();
 		System.out.println(a);
-		System.out.println(test4());
+		System.out.println(test4());  //test4 자체가 값이기에 바로 호출가능
+		String result = test5("김준일", 1);
+		System.out.println(result);
+		System.out.println(result);
+		System.out.println(result);  //호출은 1번 결과값은 3번 
+		System.out.println();
+		String names = "김준일, 김준이, 김준삼, 김준사";
+		test6(names);
+		System.out.println("test6메소드 호출 후 출력");
 		
 	}
 
