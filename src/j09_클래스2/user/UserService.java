@@ -11,6 +11,16 @@ public class UserService {
 		this.scanner = new Scanner(System.in);
 	}
 	
+	private String inputSelect1() {
+		System.out.println("메뉴선택 >> ");
+		return scanner.nextLine();
+	}
+	
+	private void ErrorMessage() {
+		System.out.println("해당 메뉴는 선택할 수 없습니다.");
+		System.out.println("다시 입력하세요.");
+	}
+	
 	public boolean showMainMenu() {
 		String select = null;
 		
@@ -18,23 +28,22 @@ public class UserService {
 		System.out.println("1. 유저 등록");
 		System.out.println("2. 유저 리스트 조회");
 		System.out.println("q. 프로그램 종료");
-		System.out.println("메뉴선택 >> ");
+
 		
-		select = scanner.nextLine();
+		select = inputSelect1();
 		if(select.equals("1")) {
 			User user = addUser();
 			if(user != null) {
 				System.out.println(user.toString());
 			}
 		}else if(select.equals("2")) {
+			while(showUserSearch()) {}
 			
-			System.out.println(userArray[i].getUsername());
 		}else if(select.equals("q")) {
 			System.out.println("프로그램 종료중 ...");
 			return false;
 		}else {
-			System.out.println("해당 메뉴는 선택할 수 없습니다.");
-			System.out.println("다시 입력하세요.");
+			ErrorMessage();
 		}
 		System.out.println();
 		return true;
@@ -62,7 +71,7 @@ public class UserService {
 
 	private User inputUser() {
 		String username = null;
-		int password = 0;
+		String password = null;
 		String name = null;
 		String email = null;
 		
@@ -72,7 +81,7 @@ public class UserService {
 		username = scanner.nextLine();
 		
 		System.out.print("비밀번호 >> ");
-		password = scanner.nextInt();
+		password = scanner.nextLine();
 		scanner.nextLine();
 		
 		System.out.print("이름 >> ");
@@ -84,5 +93,77 @@ public class UserService {
 		
 		
 		return new User(username, password, name, email);
+	}
+	
+	private boolean showUserSearch() {
+		String select = null;
+		System.out.println("[유저조회]");
+		System.out.println("1. 유저전체조회");
+		System.out.println("2. 이름으로 검색");
+		System.out.println("b. 뒤로가기");
+		select = inputSelect1();
+		
+		if(select.equals("1")) {
+			showUserList();
+		}else if(select.equals("2")) {
+			showSearchUser();
+			
+		}else if(select.equals("b")) {
+			System.out.println("이전 메뉴로 돌아갑니다.");
+			return false;
+			
+		}else {
+			ErrorMessage();
+		}
+		
+		return true;
+		
+	}
+	
+	private void showUserList() {
+		for(int i = 0; i < userArray.length; i++) {
+			if(userArray[i] != null) {
+				System.out.println(userArray[i].getUsername() + " " 
+						+ userArray[i].getPassword() + " " 
+						+ userArray[i].getName() + " " 
+						+ userArray[i].getEmail());
+			}
+
+		}
+	}
+	
+	private void showSearchUser() {
+		String searchname = null;
+		System.out.print("이름을 입력 >>");
+		searchname = scanner.nextLine();
+		
+		User searchUser = searchUserByUserName(searchname);
+		if(searchUser != null) {
+			System.out.println(searchUser.toString());
+		}
+	}
+	
+	private User searchUserByUserName(String searchName) {
+		for(int i = 0; i < userArray.length; i++) {
+			if(userArray[i] != null) {
+				String username = userArray[i].getUsername();
+				if(searchName.equals(username)) {
+					return userArray[i];
+				}
+			}
+		}
+		System.out.println("해당 이름의 학생은 존재하지 않습니다.");
+		return null;
+	}{
+
+	}
+	
+	
+	
+	
+
+	private String inputSelect() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
