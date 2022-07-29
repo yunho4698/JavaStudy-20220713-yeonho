@@ -12,18 +12,18 @@ public class PersonMain {
 			System.out.println(i + 1+ "번 사람(나이): " + ages[i]);
 		}
 		
-		Person person1 = new Person(); // 4. 생성자 오버로드 하면 오류 생김, 기본생성자를 다시 정의 해줘야 함. 기본생성자를 쓰면 오류 해결
-		
-		
-		/*
-		 * 		person1.name = "김준일";  //3.person 에서 접근지정자 private을 주면 여기서 오류- person에서 생성자를 만들어 주면 해결
-		//생성자 특징 :생성자는 반환 자료형이 없다. 클래스와 이름이 똑같다.
-		
-		 */
-		
-		
-		person1.setName("김준일");
-		System.out.println(person1.getName());
+//		Person person1 = new Person(); // 4. 생성자 오버로드 하면 오류 생김, 기본생성자를 다시 정의 해줘야 함. 기본생성자를 쓰면 오류 해결
+//		
+//		
+//		/*
+//		 * 		person1.name = "김준일";  //3.person 에서 접근지정자 private을 주면 여기서 오류- person에서 생성자를 만들어 주면 해결
+//		//생성자 특징 :생성자는 반환 자료형이 없다. 클래스와 이름이 똑같다.
+//		
+//		 */
+//		
+//		
+//		person1.setName("김준일");
+//		System.out.println(person1.getName());
 		
 		
 		
@@ -41,6 +41,12 @@ public class PersonMain {
 		
 		
 		
+	}
+
+	@Override
+	public String toString() {
+		return "PersonMain [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 }

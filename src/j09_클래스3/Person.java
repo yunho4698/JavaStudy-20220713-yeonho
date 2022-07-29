@@ -1,6 +1,6 @@
 package j09_클래스3;
 
-public class Person {
+public abstract class Person {
 	private String name;
 	private int age;
 	
@@ -33,8 +33,21 @@ public class Person {
 	public String getName() {  //반환 자료형
 		return name;        //안에서 다른 name이 없어서 this를 안씀
 	}
+
+	public abstract String mealTime();  //(1)
 	
 	
+	
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+
+
+	
+
+	
+	 
 	
 	
 	
