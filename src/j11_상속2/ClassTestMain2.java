@@ -38,7 +38,6 @@ public class ClassTestMain2 {
 		ClassB b2 = (ClassB) arrayA[0];  //(ClassB)가 다운캐스팅 해주는 형태임, 다운캐스팅된 주소를 b2에 저장, b2 는 변수임 객체랑 헷갈리면 안됨, 변수는 주소를 담고 있는거
 		
 		
-		
 		if(arrayA[0] instanceof ClassB) {
 			System.out.println("클래스 B였음");
 		}else {
@@ -56,8 +55,7 @@ public class ClassTestMain2 {
 				System.out.println("다운캐스팅 불가");
 			}
 		}
-		
-		System.out.println(b2);  //b2가 변수이면 이 변수에 있는 것을 모두 다 보게 하는거 먼지 확인
+		System.out.println(b2.getClass().getMethods()[0].getName());  //b2가 변수이면 이 변수에 있는 것을 모두 다 보게 하는거 먼지 확인
 		
 		
 		
