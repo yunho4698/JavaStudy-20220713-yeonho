@@ -3,6 +3,11 @@ package j14_lombok;
 public abstract class CarBuilder {
 	protected Car car;
 	
+	public Car build() {
+		return car;
+		
+	}
+	
 	public Car getCar() {
 		return car;
 	}
