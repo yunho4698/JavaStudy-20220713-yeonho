@@ -14,8 +14,10 @@ public class StringMap {
 		strMap.put(20, "java2");
 		strMap.put(30, "java3");
 		strMap.put(40, "java4");
+
+		//System.out.println(strMap);
 		
-		System.out.println(strMap);
+
 		
 		strMap2.put("a", "python");
 		strMap2.put("b", "python");

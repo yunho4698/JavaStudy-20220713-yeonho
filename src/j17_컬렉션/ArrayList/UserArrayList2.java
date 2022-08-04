@@ -24,13 +24,11 @@ public class UserArrayList2 {
 	}
 	
 	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		//값을 입력받기 위해 userArrayList 에 있는 스캐너 쓸거임.
 		UserArrayList2 userArrayList2 = new UserArrayList2();
+		
+		while(true) {
 		String select = null;
 		
 		System.out.println("관리자프로그램");
@@ -48,19 +46,21 @@ public class UserArrayList2 {
 			userArrayList2.addUser();
 		}else if(select.equals("2")) {
 			//리스트 조회 메소드
-			
+
+			userArrayList2.showlist();
 		}else if(select.equals("3")) {
 			//제거 메소드
 			
+			userArrayList2.removeUser();
 		}else if(select.equals("q")) {
+			
+			
 			System.out.println("종료합니다.");
 			break; //
 		}else {
 			System.out.println("값을 잘 못 입력하셨습니다.");
 		}
-		
-		
-		
+		}
 	}
 	
 	public void addUser() {
@@ -94,7 +94,34 @@ public class UserArrayList2 {
 	}
 	
 	public void removeUser() {
-		System.out.println("ID: ");
+		String username = null;
+		String password = null;
+		System.out.println("아이디: ");
+		username = scanner.nextLine();
+		//리무브 아이디랑 add된 아이디가 같은지 확인
+		for(User user : userList) {
+			if(user.getUsername().equals(username)) {
+				System.out.println("비밀번호: ");
+				password = scanner.nextLine();
+				if(user.getPassword().equals(password)) {
+					userList.remove(user);
+					System.out.println("삭제완료");
+					return;
+				}else {
+					System.out.println("비밀번호가 일치하지 않습니다.");
+					return;
+				}
+			}
+			System.out.println("해당아이디가 존재하지 않습니다.");
+		}
+		
+	}
+	
+	public void showlist() {
+		for(User user : userList) {
+			System.out.println(userList);
+		}
+		
 	}
 
 }
