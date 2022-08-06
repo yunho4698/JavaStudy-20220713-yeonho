@@ -12,7 +12,7 @@ public class StaticMain {
 		
 		System.out.println(staticTest.name);
 		staticTest.printTest();
-//		
+		
 //		StaticTest staticTest2 = new StaticTest();
 //		staticTest2.name = "김준이";
 //		System.out.println(staticTest2.name);
