@@ -1,6 +1,6 @@
-package baekjoon;
+package baekjoon.baekjoon2753;
 
-public class Baekjoon2753 {
+public class Main{
 
 	public static void main(String[] args) {
 

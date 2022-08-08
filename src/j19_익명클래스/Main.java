@@ -10,7 +10,7 @@ public class Main {
 		abstractTest.showData("JSON");
 		
 		AbstractTest abstractTest2 = new AbstractTest() {  //클래스 파일을 따로 만들지 않고 여기서 한번 쓰고 끝내겠다.
-			
+			//AbstractTestImpl같은거 만들어서 쓰고 다시 넘어오는 것이 아닌 그냥 여기서 만들어서 쓰고 끝!
 			@Override
 			public void showData(String data) {
 				System.out.println("여기에서만 사용가능한 data");
