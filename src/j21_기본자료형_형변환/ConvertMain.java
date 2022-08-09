@@ -17,6 +17,8 @@ public class ConvertMain {
 		boolean flag2 = Boolean.parseBoolean(flag);
 		String flag3 = Boolean.toString(!flag2);
 		System.out.println(flag3);
+		
+		
 	}
 
 }

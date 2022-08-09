@@ -38,7 +38,7 @@ public class DefaultFuntion {
 		
 		Predicate<String> predicate = (str) -> str == null || str.isBlank();
 		
-		System.out.println(predicate.test(""));
+		System.out.println(predicate.test(" "));
 		
 		BiConsumer<Integer, Integer> biConsumer = (num1, num2) -> { //매개변수가 2개 부터는 괄홀 생략불가
 			System.out.println("num1 + num2 = " + (num1 + num2));
