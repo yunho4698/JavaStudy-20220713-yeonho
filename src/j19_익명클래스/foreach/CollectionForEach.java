@@ -26,7 +26,8 @@ public class CollectionForEach {
 		};
 		
 		strList.forEach(consumer);
-//		
+//		List 에서 매변 하나씩 꺼내서 전달
+		
 //		
 //		Set<String> strSet = new HashSet<String>();
 //		for(int i = 0; i < 26; i++) {

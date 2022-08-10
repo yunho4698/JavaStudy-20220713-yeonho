@@ -21,6 +21,7 @@ public class StringHashSet {
 	
 		System.out.println(set);
 		//값 조회
+		//순서가 없으니깐 get은 안됨
 		Iterator<String> ir = set.iterator();
 		while(ir.hasNext()) {
 			String str = ir.next();

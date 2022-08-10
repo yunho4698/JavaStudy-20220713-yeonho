@@ -16,7 +16,7 @@ public class UserMain {
 		user.put("username", scanner.nextLine());
 		System.out.println("비밀번호: ");
 		user.put("password", scanner.nextLine());
-		System.out.println("아이디: ");
+		System.out.println("이름: ");
 		user.put("name", scanner.nextLine());
 		
 		System.out.println();
@@ -31,6 +31,7 @@ public class UserMain {
 		userSet.add(addUser());
 		userSet.add(addUser());
 
+		System.out.println(userSet);
 		
 		userSet.forEach(map -> { // forEach 안에는 consumer 들어가 있음
 			// 꺼낼때는 포이치, 이터레이터 두개 다쓸수 있는데 그때ㅐ끄댸 적절한거 쓰

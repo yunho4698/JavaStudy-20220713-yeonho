@@ -18,11 +18,14 @@ public class Dictionary {
 		
 		Map<String, User> userDict = new HashMap<String, User>();
 		String username = "junil";
-		userDict.put(null, User.builder().username(username).password("1234").build());
+		userDict.put(username, User.builder().username(username).password("1234").build());
 		
+		System.out.println(userDict);
 		if(userDict.containsKey("junil")) {
 			System.out.println(userDict.get("junil"));
 		}
+		// containsKey를 통해 key 값에 junil과 같은 값이 있는지 찾고 찾은 값을 get을 통해 key에 맞는 value 값을 내보
+		
 		
 		Scanner scanner = new Scanner(System.in);
 		

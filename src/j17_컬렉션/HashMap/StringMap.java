@@ -2,6 +2,7 @@ package j17_컬렉션.HashMap;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class StringMap {
 
@@ -31,6 +32,7 @@ public class StringMap {
 		while(irKey.hasNext()) {
 			System.out.println(strMap.get(irKey.next()));
 		}
+		//iterator는 set에 있는 순서없는 값들을 한줄로 나
 		
 		strMap.entrySet().forEach(arg -> {
 			System.out.println(arg);
