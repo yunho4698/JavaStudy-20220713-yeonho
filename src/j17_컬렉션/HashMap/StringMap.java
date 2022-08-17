@@ -26,19 +26,19 @@ public class StringMap {
 		strMap2.put("d", "python");
 		System.out.println(strMap2);
 		
-		strMap.get(10);
+		System.out.println(strMap.get(10));
 		
 		Iterator<Integer> irKey = strMap.keySet().iterator();
 		while(irKey.hasNext()) {
 			System.out.println(strMap.get(irKey.next()));
 		}
-		//iterator는 set에 있는 순서없는 값들을 한줄로 나
-		
-		strMap.entrySet().forEach(arg -> {
-			System.out.println(arg);
-			System.out.println(arg.getKey());
-			System.out.println(arg.getValue());
-		});
+//		//iterator는 set에 있는 순서없는 값들을 한줄로 나
+//		
+//		strMap.entrySet().forEach(arg -> {
+//			System.out.println(arg);
+//			System.out.println(arg.getKey());
+//			System.out.println(arg.getValue());
+//		});
 		
 		
 		
